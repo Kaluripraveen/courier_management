@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>this is a </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'welcom.css' %}">
+        
+    </head>
+    <body class ="Home">
+        <header class="primary-header flex">
+            <div>
+                <img src="/static/lo.png" alt="logo" class="logo">
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only" ></span></button>
+            
+            <nav>
+                <ul id = "primary-navigation" data-visible="false" class ="primary-navigation flex">
+                    <li class = "active">
+                        <a href = "">
+                            <span aria-hidden="true">00</span> Home
+                        </a>    
+                    </li> 
+                    <li>
+                        <a href = "">
+                            <span aria-hidden="true">01</span> Destination
+                        </a>    
+                    </li>        
+                    <li >
+                        <a href = "">
+                            <span aria-hidden="true">02</span> Crew
+                        </a>    
+                    </li>  
+                    <li>
+                        <a href = "/login">
+                            <span aria-hidden="true">03</span> Login
+                        </a>  
+                          
+                    </li>  
+                </ul>        
+            </nav>
+        </header>
+        <div>
+            {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% block content %}{% endblock content %}
+        <div class="text" text-align:center;>
+            <div class="qoute3">
+                <p>we are commited to be the leading</p>
+            </div>
+            <div class="qoute2">
+                WORLD CLASS
+            </div>
+            <h3>LOGISTIC</h3>
+        </div>
+
+    
+
+        {% load static %}
+        <script  type="module" src="{% static 'welcomPage.js' %}"></script>
+            
+        
+    </body>
+</html>

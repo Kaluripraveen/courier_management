@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>this is a </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'welcom.css' %}">
+        {% load static %}
+        <script  type="module" src="{% static 'welcomPage.js' %}"></script>
+        
+    </head>
+    <body class ="Home">
+        <header class="primary-header flex">
+            <div>
+                <img src="/static/lo.png" alt="logo" class="logo">
+            </div>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only" ></span></button>
+            
+            <nav>
+                <ul id = "primary-navigation" data-visible="false" class ="primary-navigation flex">
+                    <li class = "active">
+                        <a href = "">
+                            <span aria-hidden="true">00</span> Home
+                        </a>    
+                    </li> 
+                    <li>
+                        <a href = "">
+                            <span aria-hidden="true">01</span> Destination
+                        </a>    
+                    </li>        
+                    <li >
+                        <a href = "">
+                            <span aria-hidden="true">02</span> Crew
+                        </a>    
+                    </li>  
+                    <li>
+                        <a href = "/login">
+                            <span aria-hidden="true">03</span> Login
+                        </a>  
+                          
+                    </li>  
+                </ul>        
+            </nav>
+        </header>
+        
+            <div id='login-form'class='login-page'>
+                <div class="form-box">
+                    <div class='button-box'>
+                        <div id='btn'></div>
+                        <button id = 'loginbutton'type='button'onclick='login'class='toggle-btn'>Log In</button>
+                        <button id = 'resbutton'type='button'onclick='register'class='toggle-btn'>Register</button>
+                      
+                    </div>
+                <form id='login' method='post' class='input-group-login' action="">
+                    {% csrf_token %}
+                    <input name = "email"type='text'class='input-field'placeholder='Email Id' required >
+                    <input name = "password"type='password'class='input-field'placeholder='Enter Password' required>
+                    <input type='checkbox'class='check-box'><span id="span-class">Remember Password</span>
+                    <button type='submit'class='submit-btn'>Log in</button>
+                </form>
+                <form id='register' class='input-group-register'>
+                    {% csrf_token %}
+                      <input name = "FirstName"type='text'class='input-field'placeholder='First Name' required>
+                    <input name = "LastName"type='text'class='input-field'placeholder='Last Name ' required>
+                    <input name = "email"type='email'class='input-field'placeholder='Email Id' required>
+                    <input name = "password"type='password'class='input-field'placeholder='Enter Password' required>
+                    <input type='password'class='input-field'placeholder='Confirm Password'  required>
+                    <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+                </form>
+                </div>
+            </div> 
+    
+
+        
+            
+        
+    </body>
+</html>
+
+
+
